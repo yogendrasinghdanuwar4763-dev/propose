@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Propose Day Surprise 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      padding: 40px 15px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #b30059;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .joke {
+      font-size: 1.3rem;
+      background: white;
+      margin: 20px auto;
+      padding: 15px;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .heart {
+      font-size: 3rem;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .final {
+      margin-top: 40px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 20px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .final h2 {
+      color: #e60073;
+      font-size: 2.3rem;
+    }
+
+    .final p {
+      font-size: 1.4rem;
+      color: #333;
+    }
+
+    button {
+      margin: 15px;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 25px;
+      background: #ff4d88;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #cc0066;
+      transform: scale(1.1);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 1rem;
+      color: #660033;
+    }
+
+    /* Falling Hearts */
+    .falling-heart {
+      position: fixed;
+      top: -10px;
+      font-size: 24px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <!-- Replace with your song -->
+    <source src="your-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+
+    <h1 id="title">Happy Propose Day 💌😜</h1>
+
+    <div class="joke"> I was going to buy you chocolate... but yaad aayo malai hjr tww chocolate vanda ni guliyo hunu hunx saneyy  🤭😝!</div>
+    <div class="joke">😅 hera tw saney hjr ley fasaihalnu vyoo malaii hjr ko maya maa😍.. heraa itss urr fault saneyy 😅 u trapped mee and i am not goonaa leave you saney”</div>
+    <div class="joke">🤭 If loving you was a job, I would work overtime for free!</div>
+
+    <div class="heart">❤️</div>
+
+    <button onclick="showProposal()">Click for Final Surprise 😏</button>
+
+    <div id="proposal" class="final hidden">
+      <h2>💍 My Best Proposal 💍</h2>
+
+      <p>
+        From jokes to love, from fun to forever 💕<br><br>
+        You are not just my girlfriend,<br>
+        you are my best friend, my happiness,<br>
+        my peace, and my crazy world 😍 hera tww mailey propose na gareyko vayee timi ma sanga hudoina thyouu what mero propose garney tarika ali casual thyoo sayadd😭😂 tara j vaynii mero best desicion hera tww na leko vayee aaja hami ya hunthyemm tww saneyy??😍hera tw mailey aafai propose nagareyko vaye ahiley timi ka badhkirako hunthyouu😆 hera tw malai hjr ko maya lagaera ho mailey propse gareryko but guess what you are my girrlfndd now😍It's time to flex hai. Sathi huda ni ma height ko bareama billa udauthyee but sadly guess what timi girlfrndd vaye ni ma billa hanna chai xodinaa🤭Hera tw ka pauxau ma jsto paulau tara aafno height barabarar😆but joke's apart with my best decision I am always able to Smile because all of you my happiness in my face is all because of you so you chotu mt best decision 😁.<br><br>
+        So today, on Propose Day,
+        I just want to ask you…
+      </p>
+
+      <h2>Will You Be Mine Forever? 💍💖</h2>
+      <p>Aja matra hoin..voli pani hoin..but for lifetime will you spend every single breathing with me?? ali englishh ma na janu saney english ali kamjor x tara hjr ko lagi maya chai kamjor xain haii 🤭..kaluwa huwa toh kya huwa dilwala toh hu 😆. k vayo rw hjr lai khusi rakhna afno billa hanera basna ni tayar xu 😝..aaru vanna vetxauu ma jstoo?? Again I LOVE UH PRANUU ❤️</p>
+
+      <button onclick="sayYes()">YES 😍</button>
+      <button id="noBtn" onmouseover="moveNo()">NO 🙈</button>
+
+      <p id="yesMsg" class="hidden" style="margin-top:20px; font-size:1.6rem; color:#e60073;">
+        YAYYYY!! 💍❤️  
+        malai tha thyo!! You just made me the happiest person alive 🤭
+      </p>
+
+      <p id="secret" class="hidden" style="font-size:1.3rem;">
+        Prasannata ghimire You're officially stuck with Yogendra singh forever 😜💖
+      </p>
+    </div>
+
+    <footer>
+      Made by finger 😜😆
+    </footer>
+
+  </div>
+
+  <script>
+    // Personalize Name Here
+    const name = "My Love ❤️"; // change name
+    document.getElementById("title").innerText =
+      `Happy Propose Day, ${name} 💌😜`;
+
+    function showProposal() {
+      document.getElementById('proposal').classList.remove('hidden');
+      document.getElementById('bgMusic').play();
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    function sayYes() {
+      document.getElementById("yesMsg").classList.remove("hidden");
+      setTimeout(() => {
+        document.getElementById("secret").classList.remove("hidden");
+      }, 4000);
+    }
+
+    function moveNo() {
+      const btn = document.getElementById("noBtn");
+      btn.style.position = "absolute";
+      btn.style.left = Math.random() * 80 + "%";
+      btn.style.top = Math.random() * 80 + "%";
+    }
+
+    // Falling hearts generator
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "falling-heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 300);
+  </script>
+
+</body>
+</html>
